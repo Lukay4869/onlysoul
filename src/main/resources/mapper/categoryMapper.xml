@@ -11,11 +11,11 @@
         select * from category where categoryId = #{categoryId}
     </select>
 
-    <insert id="add" parameterType="com.soul.entity.Category">
+    <insert id="add">
         insert into category (categoryName) values (#{categoryName});
     </insert>
 
-    <update id="update" parameterType="com.soul.entity.Category">
+    <update id="update">
         update category set categoryName = #{categoryName} where categoryId = #{categoryId}
     </update>
 

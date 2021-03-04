@@ -10,9 +10,10 @@ import java.util.List;
 @Repository
 public interface GoodsMapper {
     List<Goods> findAll();
+
     Goods find(Integer goodsId);
+
     int add(Goods goods);
+
     int update(Goods goods);
-
-
 }
