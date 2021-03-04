@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>商品分类修改</title>
+</head>
+<body>
+<div class="title">
+    商品分类修改
+</div>
+<form action="updateSubmit" method="post">
+    <input type="hidden" name="categoryId" th:value="${category.categoryId}">
+    <table>
+        <tr>
+            <td>分类名称</td>
+            <td>
+                <input type="text" name="categoryName" th:value="${category.categoryName}" required="required">
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>
+                <input type="submit" value="修改">
+                <a href="index.html">返回</a>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</div>
+
+</body>
+</html>

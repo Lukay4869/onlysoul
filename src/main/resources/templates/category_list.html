@@ -7,19 +7,26 @@
 <body>
     <table>
         <tr>
-            <td>分类编号</td>
-            <td>分类名称</td>
-            <td>操作</td>
+            <th>分类编号</th>
+            <th>分类名称</th>
+            <th>操作</th>
         </tr>
         <th:block th:each="c:${categoryList}">
             <tr>
                 <td th:text="${c.categoryId}"></td>
                 <td th:text="${c.categoryName}"></td>
                 <th>
-                    <a href="#">修改</a>
+                    <a th:href="@{/admin/updateShow(categoryId=${c.categoryId})}">修改</a>
+                    <a th:href="@{/admin/category/updateShow(categoryId=${c.categoryId})}">删除</a>
                 </th>
             </tr>
         </th:block>
+        <tr>
+            <td colspan="3">
+                <a href="/admin/addShow">添加分类</a>
+                <a href="/admin/list">返回</a>
+            </td>
+        </tr>
     </table>
 </body>
 </html>

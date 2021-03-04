@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soul.mapper.GoodsMapper">
+    <resultMap id="goodsMap" type="Goods" autoMapping="true">
+        <id column="goodsId" property="goodId"/>
+        <association property="category" javaType="Category" autoMapping="true">
+            <id column="categoryId" property="categoryId"/>
+        </association>
+    </resultMap>
+    <select id="findAll" resultMap="goodsMap">
+        select g.goodsId,g.goodsName,g.price,g.address,g.produceDate,g.picture,c.categoryId,c.categoryName
+        from goods g join category c on g.categoryId = .categoryId
+    </select>
+
+    <select id="find" resultMap="goodsMap">
+        select g.goodsId,g.goodsName,g.price,g.address,g.produceDate,g.picture,c.categoryId,c.categoryName
+        from goods g join category c on g.categoryId = .categoryId where g.goodsId = #{goodsId}
+    </select>
+
+    <insert id="add" parameterType="Goods">
+        insert into goods (goodsName,price,address,produceDate,picture,categoryId) values
+        (#{goodsName},#{price},#{address},#{produceDate},#{picture},#{categoryId})
+    </insert>
+
+    <update id="update" parameterType="Goods">
+        update goods set goodsName=#{goodsName},price=#{price},address=#{address},produceDate=#{produceDate},
+        picture=#{picture},categoryId=#{categoryId} where goodsId=#{goodsId}
+    </update>
+
+</mapper>

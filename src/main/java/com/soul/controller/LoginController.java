@@ -15,7 +15,7 @@ public class LoginController {
     //定义后台登录对象
     @Autowired
     private UsersService usersService;
-    @RequestMapping("loginShow")
+    @RequestMapping("/loginShow")
     public String login(){
         return "login";
     }
@@ -31,5 +31,12 @@ public class LoginController {
             session.setAttribute("adminUser",u);
             return "index";
         }
+        //用户登出功能
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "login";
+
+    }
 
 }

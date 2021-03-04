@@ -6,15 +6,22 @@
     <link rel="stylesheet" type="text/css" href="/admin.css">
 </head>
 <body>
-这难道不是表单页面吗
-    <div class="container">
-        <div class="top"></div>
-        <div class="main">
-            <div class="left"></div>
-            <div class="right">
-                <iframe src="./welcome.html" name="content"></iframe>
-            </div>
+<p><span style="color: red">[[${session.adminUser}]]</span> , 欢迎你！ <a href="/admin/logout">退出登录</a></p>
+<div class="container">
+
+    <ul>
+        <li><a href="/admin/goodsList" target="content">商品信息查询</a> </li>
+        <li><a href="/admin/goodsAddShow" target="content">商品信息添加</a> </li>
+    </ul>
+
+    <a href="/admin/addShow">增加类别</a>
+    <a href="/admin/list">商品分类查询</a>
+    <div class="top"></div>
+    <div class="main">
+        <div class="left"></div>
+        <div class="right">
         </div>
     </div>
+</div>
 </body>
 </html>
