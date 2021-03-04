@@ -73,7 +73,7 @@ public class GoodsController {
         return "redirect:/goodsList";
     }
 
-    @RequestMapping("/updateShow")
+    @RequestMapping("/updateShow2")
     public String updateShow(Integer goodsId,Model model){
         //根据商品编号获取商品信息
         Goods goods = goodsService.find(goodsId);

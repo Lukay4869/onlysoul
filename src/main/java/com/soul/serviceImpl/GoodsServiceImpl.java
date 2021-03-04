@@ -3,13 +3,16 @@ package com.soul.serviceImpl;
 import com.soul.entity.Goods;
 import com.soul.mapper.GoodsMapper;
 import com.soul.service.GoodsService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class GoodsServiceImpl implements GoodsService {
     @Resource
     private GoodsMapper goodsMapper;
+
     @Override
     public List<Goods> list() {
         return goodsMapper.findAll();
