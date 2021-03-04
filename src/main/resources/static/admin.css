@@ -1,0 +1,38 @@
+.container
+{
+    width: 1200px;
+    height: 100%;
+    margin: 0px auto;
+}
+.container .top
+{
+    height: 15%;
+    background-color: #449d44;
+
+}
+.container .main
+{
+    height: 85%;
+    background-color: red;
+}
+.container .main .left
+{
+    height: 100%;
+    width: 20%;
+    float: left;
+    background-color: #31b0d5;
+}
+.container .main .right
+{
+    height: 100%;
+    width: 80%;
+    float: right;
+    background-color: #ec971f;
+}
+.container .main .right iframe
+{
+    display: block;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
